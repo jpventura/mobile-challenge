@@ -1,5 +1,9 @@
 # Android Sample
 
+## TL; DR
+
+The [APK](result/app-debug.apk) is available for download in [results](./results) directory.
+
 ## Requirements
 
   1. Series
