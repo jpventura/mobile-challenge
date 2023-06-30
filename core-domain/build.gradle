@@ -5,7 +5,7 @@ dependencies {
     api libraries.rxAndroid
     api libraries.rxJava
 
-    testApi testLibraries.junit
+    testImplementation testLibraries.junit
 
     implementation libraries.kotlin
     implementation fileTree(dir: "libs", include: ["*.jar"])

@@ -65,6 +65,10 @@ class TVMazeSeries(private val client: TVMazeClient) : TelevisionSeriesModel.Ser
 
     override fun find(keys: Collection<Long>): Observable<List<Show>> = TODO()
 
+    fun foo() {
+        val list: List<String> = mutableListOf("1", "2")
+    }
+
     override fun find(query: Map<String, Any?>): Observable<List<Show>> {
         val name = query["name"] as String?
         val page: Int = query["page"] as? Int ?: 1
