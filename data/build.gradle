@@ -20,12 +20,12 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField 'String', 'TV_MAZE_API_URL', "\"http://api.tvmaze.com/\""
+            buildConfigField 'String', 'TV_MAZE_API_URL', "\"https://api.tvmaze.com/\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
-            buildConfigField 'String', 'TV_MAZE_API_URL', "\"http://api.tvmaze.com/\""
+            buildConfigField 'String', 'TV_MAZE_API_URL', "\"https://api.tvmaze.com/\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
