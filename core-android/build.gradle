@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -13,6 +12,10 @@ android {
 
     dataBinding {
         enabled = true
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     defaultConfig {
@@ -45,7 +48,6 @@ dependencies {
     implementation libraries.kodeinAndroid
     implementation libraries.lifecycleExtensions
     implementation libraries.material
-    implementation libraries.viewModelKtx
 
     androidTestImplementation instrumentedTestLibraries.espresso
     androidTestImplementation instrumentedTestLibraries.junit
