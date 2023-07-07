@@ -2,12 +2,12 @@ ext {
     versions = [
             // Build tools and SDK
             buildTools      : "29.0.3",
-            compileSdk      : 29,
-            gradlePlugin    : '7.1.0-rc01',
+            compileSdk      : 31,
+            gradlePlugin    : '8.0.2',
             jetpack         : "1.1.0",
-            kotlin          : "1.3.72",
+            kotlin          : '1.6.21',
             minSdk          : 21,
-            targetSdk       : 29,
+            targetSdk       : 31,
 
             // Android libraries
             arch            : "2.1.0",
