@@ -28,7 +28,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PopularMovies">
-        <activity android:name="com.jpventura.popularmovies.MainActivity">
+        <activity android:name="com.jpventura.popularmovies.MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

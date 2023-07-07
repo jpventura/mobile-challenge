@@ -26,6 +26,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.widget.SearchView
+import androidx.recyclerview.widget.RecyclerView
 import com.jpventura.core.android.ktx.toObservable
 import com.jpventura.core.android.ui.SpacesItemDecoration
 import com.jpventura.domain.bean.Show
@@ -38,7 +39,6 @@ import com.jpventura.popularmovies.series.vm.SeriesViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_series.*
 import java.util.concurrent.TimeUnit
 
 class SeriesFragment : InjectedFragment() {
@@ -46,7 +46,7 @@ class SeriesFragment : InjectedFragment() {
     private lateinit var adapter: SeriesAdapter
     private lateinit var binding: FragmentSeriesBinding
     private lateinit var searchView: SearchView
-
+    private lateinit var recyclerview_series: RecyclerView
     private val disposables = CompositeDisposable()
     private val vm: SeriesViewModel by viewModel()
     private var query: String = ""
@@ -102,6 +102,7 @@ class SeriesFragment : InjectedFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        recyclerview_series = view.findViewById(R.id.recyclerview_series)
         recyclerview_series.adapter = adapter
         val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing)
         recyclerview_series.addItemDecoration(SpacesItemDecoration(spacingInPixels))

@@ -34,7 +34,6 @@ import com.jpventura.core.android.ktx.inflate
 import com.jpventura.core.android.ui.RecyclerViewArrayAdapter
 import com.jpventura.domain.bean.Episode
 import com.jpventura.popularmovies.R
-import kotlinx.android.synthetic.main.item_episodes.view.*
 
 class EpisodesAdapter : RecyclerViewArrayAdapter<Episode, EpisodesAdapter.ViewHolder>() {
 
@@ -101,9 +100,9 @@ class EpisodesAdapter : RecyclerViewArrayAdapter<Episode, EpisodesAdapter.ViewHo
     }
 
     inner class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
-        val poster: ImageView = item.mtrl_list_item_icon
-        val title: TextView = item.mtrl_list_item_text
-        val body: TextView = item.mtrl_list_item_secondary_text
+        val poster: ImageView = item.findViewById(R.id.mtrl_list_item_icon)
+        val title: TextView = item.findViewById(R.id.mtrl_list_item_text)
+        val body: TextView = item.findViewById(R.id.mtrl_list_item_secondary_text)
     }
 
 }

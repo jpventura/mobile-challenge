@@ -62,7 +62,6 @@ interface TVMazeClient {
 
     @GET("shows")
     fun getShows(
-        @Query("page") page: Int? = 1,
         @Query("q") query: String? = null
     ): Single<List<Show>>
 

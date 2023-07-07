@@ -25,9 +25,11 @@ package com.jpventura.popularmovies.episodes.ui
 import android.os.Bundle
 import android.text.Html
 import android.view.*
+import android.widget.ToggleButton
 import androidx.core.content.ContextCompat.getColor
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.jpventura.core.android.ui.SpacesItemDecoration
 import com.jpventura.domain.bean.schedule
 import com.jpventura.domain.bean.show
@@ -37,7 +39,6 @@ import com.jpventura.popularmovies.app.ui.InjectedFragment
 import com.jpventura.popularmovies.app.ui.activity
 import com.jpventura.popularmovies.databinding.FragmentEpisodesBinding
 import com.jpventura.popularmovies.episodes.vm.EpisodesViewModel
-import kotlinx.android.synthetic.main.fragment_episodes.*
 
 class EpisodesFragment : InjectedFragment() {
 
@@ -66,18 +67,18 @@ class EpisodesFragment : InjectedFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        activity().setSupportActionBar(toolbar)
+        activity().setSupportActionBar(binding.toolbar)
         activity().supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        collapsing_toolbar.setExpandedTitleColor(getColor(requireActivity(), android.R.color.transparent))
 
-        toggle_favorite.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.collapsingToolbar.setExpandedTitleColor(getColor(requireActivity(), android.R.color.transparent))
+        binding.toggleFavorite.setOnCheckedChangeListener { buttonView, isChecked ->
             vm.isFavorite = isChecked
         }
 
-        recyclerview_episodes.adapter = adapter
+        binding.recyclerviewEpisodes.adapter = adapter
 
         val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing)
-        recyclerview_episodes.addItemDecoration(SpacesItemDecoration(spacingInPixels))
+        binding.recyclerviewEpisodes.addItemDecoration(SpacesItemDecoration(spacingInPixels))
 
         arguments?.let{
             setSeries(it)
@@ -103,14 +104,15 @@ class EpisodesFragment : InjectedFragment() {
         Glide.with(this)
             .load(show.poster)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .into(image_view_background)
+            .into(binding.imageViewBackground)
 
         activity().title = show.name
 
-        text_overview.text = Html.fromHtml(show.summary)
+
+        binding.textOverview.text = Html.fromHtml(show.summary)
 
         // FIXME: Should be using parcelize
-        subtitle.text = show.genres.joinToString(separator = " ")
+        binding.subtitle.text = show.genres.joinToString(separator = " ")
 
         vm.findEpisodes(show)
     }

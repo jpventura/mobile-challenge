@@ -10,7 +10,6 @@ import com.jpventura.core.android.ktx.inflate
 import com.jpventura.core.android.ui.RecyclerViewArrayAdapter
 import com.jpventura.domain.bean.Show
 import com.jpventura.popularmovies.R
-import kotlinx.android.synthetic.main.item_series.view.*
 
 class SeriesAdapter : RecyclerViewArrayAdapter<Show, SeriesAdapter.ViewHolder>() {
 
@@ -61,7 +60,7 @@ class SeriesAdapter : RecyclerViewArrayAdapter<Show, SeriesAdapter.ViewHolder>()
     }
 
     inner class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
-        val poster: ImageView = item.image_item_poster
+        val poster: ImageView = item.findViewById(R.id.image_item_poster)
     }
 
 }
