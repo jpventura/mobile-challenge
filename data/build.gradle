@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -67,8 +66,6 @@ dependencies {
     implementation libraries.constraintlayout
     implementation libraries.kodein
     implementation libraries.kodeinAndroid
-    implementation libraries.lifecycleExtensions
-    implementation libraries.viewModelKtx
     implementation project(path: ':domain')
 
     androidTestImplementation instrumentedTestLibraries.espresso
