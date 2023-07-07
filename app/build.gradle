@@ -1,6 +1,5 @@
 apply plugin: "com.android.application"
 apply plugin: "kotlin-android"
-apply plugin: "kotlin-android-extensions"
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -13,6 +12,10 @@ android {
 
     dataBinding {
         enabled = true
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     defaultConfig {
@@ -52,7 +55,6 @@ dependencies {
     implementation libraries.lifecycleExtensions
     implementation libraries.material
     implementation libraries.timber
-    implementation libraries.viewModelKtx
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation project(path: ':data')
     implementation project(path: ':domain')
