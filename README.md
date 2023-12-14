@@ -77,6 +77,9 @@ This libraries shall be provide as independend packages in Maven, allowing faste
 [aca-img]: https://five.agency/wp-content/uploads/2017/06/graf_2_B-1.png
 [aca-url]: https://five.agency/android-architecture-part-3-applying-clean-architecture-android/
 
+[apollo-url]: https://www.apollographql.com/docs/kotlin/
+[room-url]: https://developer.android.com/jetpack/androidx/releases/room
+
 [srp-img]: https://five.agency/wp-content/uploads/2016/11/Graph-4-1.png
 [srp-url]: https://five.agency/android-architecture-part-3-applying-clean-architecture-android/
 
